@@ -1,0 +1,6 @@
+--- src/components/WaterRippleHero.tsx
++++ src/components/WaterRippleHero.tsx
+@@ -282,2 +282,3 @@
+     const resizeAndRender = () => {
+       if (!isRunning) return;
++      // console.log("Render loop running");

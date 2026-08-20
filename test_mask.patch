@@ -1,0 +1,7 @@
+--- src/components/WaterRippleHero.tsx
++++ src/components/WaterRippleHero.tsx
+@@ -194,3 +194,3 @@
+             // Fade displacement out completely above uv.y = 0.38 to protect hand/glove
+-            float mask = smoothstep(0.40, 0.30, uv.y);
++            float mask = 1.0;
+ 

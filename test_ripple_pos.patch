@@ -1,0 +1,24 @@
+--- src/components/WaterRippleHero.tsx
++++ src/components/WaterRippleHero.tsx
+@@ -77,2 +77,20 @@
+     const firstRippleTimeout = setTimeout(() => {
++      let spawnX = FINGERTIP_X;
++      let spawnY = FINGERTIP_Y;
++      if (imageRef.current && containerRef.current) {
++        const rect = containerRef.current.getBoundingClientRect();
++        const canvasAspect = rect.width / rect.height;
++        const imgAspect = imageRef.current.width / imageRef.current.height;
++        let sWidth = imageRef.current.width;
++        let sHeight = imageRef.current.height;
++        let sx = 0, sy = 0;
++        if (imgAspect > canvasAspect) {
++          sWidth = imageRef.current.height * canvasAspect;
++          sx = (imageRef.current.width - sWidth) / 2;
++        } else {
++          sHeight = imageRef.current.width / canvasAspect;
++          sy = (imageRef.current.height - sHeight) / 2;
++        }
++        spawnX = (imageRef.current.width * FINGERTIP_X - sx) / sWidth;
++        spawnY = (imageRef.current.height * FINGERTIP_Y - sy) / sHeight;
++      }
+       spawnRipple(FINGERTIP_X, FINGERTIP_Y, {
