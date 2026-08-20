@@ -18,4 +18,5 @@ View your app in AI Studio: https://ai.studio/apps/da5c07b6-5751-4d69-ad28-c286d
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+   biozatra website 
    
